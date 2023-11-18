@@ -1,4 +1,3 @@
-package src.test.java;
 
 import org.junit.jupiter.api.Test;
 
@@ -17,9 +16,9 @@ import static com.codeborne.selenide.Selenide.open;
         //Перейдите в раздел Wiki проекта
         $(".js-wiki-more-pages-link").click();
         $(".wiki-pages-box").shouldHave(text("SoftAssertions"));
+        // Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions
         $(byText("SoftAssertions")).click();
-               // Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions
-                //Откройте страницу SoftAssertions
+        //Откройте страницу SoftAssertions
         $("#user-content-3-using-junit5-extend-test-class").parent().sibling(0).$("pre").shouldHave(text("@ExtendWith({SoftAssertsExtension.class})\n" +
                 "                        class Tests {\n" +
                 "                         @Test\n" +
