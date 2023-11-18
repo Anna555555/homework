@@ -15,5 +15,12 @@ public static void main(String[]args){
     System.out.println("Умножение: a * b = " + (a * b));
     System.out.println("Деление: a / b = " + (a / b));
     System.out.println("Остаток от деления: a % b = " + (a % b));
+
+    if (a>b) {
+        System.out.println(true);
+    }
+    else {
+        System.out.println(false);
+    }
 }
 }
