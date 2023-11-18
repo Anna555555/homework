@@ -20,10 +20,17 @@ import static com.codeborne.selenide.Selenide.open;
         $(".gh-header-title").shouldHave(text("SoftAssertions"));
                // Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions
                 //Откройте страницу SoftAssertions
-        $("#user-content-3-using-junit5-extend-test-class").parent().sibling(0).$("pre").shouldHave(text("@Test"));
+        $("#user-content-3-using-junit5-extend-test-class").parent().sibling(0).$("pre").shouldHave(text("@ExtendWith({SoftAssertsExtension.class})\n" +
+                "                        class Tests {\n" +
+                "                         @Test\n" +
+                "                        void test() {\n" +
+                "                        Configuration.assertionMode = SOFT;\n" +
+                "                        open(\"page.html\");\n" +
+                "\n" +
+                "                        $(\"#first\").should(visible).click();\n" +
+                "                        $(\"#second\").should(visible).click();\n" +
+                "                        }\n" +
+                "                        }"));
         } //проверьте что внутри SoftAssertions есть пример кода для JUnit5
 
         }
-/*<span data-view-component="true" class="Truncate">
-<a href="/selenide/selenide/wiki/SoftAssertions" data-view-component="true" class="Truncate-text text-bold py-1">SoftAssertions</a>
-</span> */
